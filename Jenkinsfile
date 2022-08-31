@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        remoteServer = "ec2-3-110-148-10.ap-south-1.compute.amazonaws.com"
+        remoteServer = "ec2-43-205-119-165.ap-south-1.compute.amazonaws.com"
 
         fileName = "aws-deployment-demo-0.1.jar"
         /*

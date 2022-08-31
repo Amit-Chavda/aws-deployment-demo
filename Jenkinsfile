@@ -6,15 +6,16 @@ pipeline {
         fileName = "aws-deployment-demo-0.1.jar"
         /*
         print java version
+        remove old file
         stop running app
-        remove old copy
         download new from S3 bucket
-        run new downloaded file */
+        run new downloaded file in background and exit */
         remoteCommands ="""java --version;
-        sudo kill \$(sudo lsof -t -i:8085);
         rm -r deployments;
-        aws s3 cp s3://aws-spring-deployment-bucket/$fileName deployments/;
-        nohup java -jar /deployments/$fileName & exit"""
+        sudo kill \$(sudo lsof -t -i:8085);
+        aws s3 cp s3://aws-spring-deployment-bucket/aws-deployment-demo-0.1.jar deployments/ &&
+        nohup java -jar deployments/aws-deployment-demo-0.1.jar >/dev/null 2>&1 &
+        sleep 5"""
     }
     stages {
       /*   stage('Clone and Checkout') {

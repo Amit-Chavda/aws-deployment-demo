@@ -11,7 +11,7 @@ pipeline {
         download new from S3 bucket
         run new downloaded file */
         remoteCommands ="""java --version;
-        sudo kill -9 $(sudo lsof -t -i:8085);
+        sudo kill -9 \$(sudo lsof -t -i:8085);
         rm -r deployments;
         aws s3 cp s3://aws-spring-deployment-bucket/$fileName deployments/;
         java -jar /deployments/$fileName &"""

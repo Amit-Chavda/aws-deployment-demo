@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.aws.demo</groupId>
 	<artifactId>aws-deployment-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<name>aws-deployment-demo</name>
 	<description>Demo project on how to deploy spring boot project on AWS</description>
 	<properties>

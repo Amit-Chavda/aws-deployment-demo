@@ -1,12 +1,7 @@
 pipeline {
     agent any
     environment {
-<<<<<<< HEAD
-        remoteServer = "ec2-43-205-119-165.ap-south-1.compute.amazonaws.com"
-=======
         remoteServer = "ec2-3-110-94-172.ap-south-1.compute.amazonaws.com"
->>>>>>> e23b847 (Changed aws instance dns name)
-
         fileName = "aws-deployment-demo-0.1.jar"
         /*
         print java version

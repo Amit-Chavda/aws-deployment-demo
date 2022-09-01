@@ -22,7 +22,7 @@
 ![Deploy Spring App in AWS drawio (1)](https://user-images.githubusercontent.com/47694676/187876753-6884f26f-0f77-4697-b73a-3e450b0f5f52.png)
 
 <details>
-<summary><h3>Tools used:</h3></summary>
+<summary><h2>Tools used:</h2></summary>
 
 - Java 17
 - Spring boot 2.7.2
@@ -52,4 +52,66 @@
     - Internet Gateway
 </details>
 
+</details>
+
+
+<details>
+<summary><h2>Useful Ubuntu Commands</h2></summary>
+
+List of ubuntu commands used by this project
+
+```
+//install jdk
+sudo apt install openjdk-18-jdk
+
+//set path
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+//verify
+echo $JAVA_HOME
+
+//remove directory
+rm -r demo/
+
+//list jvm process
+jps
+
+//kill running process by process id
+sudo kill pid
+
+//kill a process on running on port 8085
+sudo kill $(sudo lsof -t -i:8085)
+
+//connect to ec2 instance
+ssh -i aws-ubuntu-server-keypair.pem ubuntu@13.127.76.220
+
+//command conjectives
+&&: Run if preceding command exited with 0
+;: Run unconditionally
+||: Run if preceding command exited with a non-zero exit status.
+&: Run both commands in paralell, the first in background and second in foreground.
+```
+</details>
+
+
+
+<details>
+<summary><h2>Useful AWS Commands</h2></summary>
+
+List of aws cli commands used by this project
+
+```
+//configure aws credentials
+aws configure
+
+//list s3 buckets
+aws s3 ls
+
+//upload file in s3
+aws s3 cp source-path destination-path (i.e. aws s3 cp testfile.txt s3://bucket-name)
+
+//download file
+aws s3 cp s3://bucket-name/filename.txt .
+
+```
 </details>
